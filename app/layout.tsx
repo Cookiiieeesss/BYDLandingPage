@@ -29,9 +29,9 @@ export const metadata: Metadata = {
   alternates: { languages: { "id-ID": "/" } },
   robots: { index: true, follow: true },
   icons: {
-    icon: [{ url: "/assets/cropped-BYD-Cibubur-Logo.png", type: "image/png" }],
-    shortcut: ["/assets/cropped-BYD-Cibubur-Logo.png"],
-    apple: [{ url: "/assets/cropped-BYD-Cibubur-Logo.png", type: "image/png" }],
+    icon: [{ url: "/assets/Aditautocar Chrome Automotive Logo.png", type: "image/png" }],
+    shortcut: ["/assets/Aditautocar Chrome Automotive Logo.png"],
+    apple: [{ url: "/assets/Aditautocar Chrome Automotive Logo.png", type: "image/png" }],
   },
   openGraph: {
     type: "website",
