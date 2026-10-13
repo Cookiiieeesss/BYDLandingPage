@@ -4,3 +4,6 @@ out/
 tsconfig.tsbuildinfo
 .DS_Store
 AGENTS.md
+
+.vercel
+.env*.local
