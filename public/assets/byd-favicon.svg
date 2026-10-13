@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 603 278" role="img" aria-label="BYD">
+  <defs>
+    <filter id="byd-dark" color-interpolation-filters="sRGB">
+      <feColorMatrix type="matrix" values="0 0 0 0 0.09 0 0 0 0 0.09 0 0 0 0 0.08 0 0 0 1 0" />
+    </filter>
+  </defs>
+  <image href="/assets/byd-logo.png" x="0" y="0" width="603" height="278" preserveAspectRatio="none" filter="url(#byd-dark)" />
+</svg>

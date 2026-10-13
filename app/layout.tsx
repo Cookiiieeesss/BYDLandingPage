@@ -28,6 +28,11 @@ export const metadata: Metadata = {
   category: "Automotive",
   alternates: { languages: { "id-ID": "/" } },
   robots: { index: true, follow: true },
+  icons: {
+    icon: [{ url: "/assets/byd-favicon.svg", type: "image/svg+xml" }],
+    shortcut: ["/assets/byd-favicon.svg"],
+    apple: [{ url: "/assets/byd-favicon.svg", type: "image/svg+xml" }],
+  },
   openGraph: {
     type: "website",
     locale: "id_ID",
