@@ -26,8 +26,11 @@ export const metadata: Metadata = {
   creator: "BYD Harmony Cikupa",
   publisher: "BYD Harmony Cikupa",
   category: "Automotive",
-  alternates: { languages: { "id-ID": "/" } },
+  alternates: { canonical: "/", languages: { "id-ID": "/" } },
   robots: { index: true, follow: true },
+  verification: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION
+    ? { google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION }
+    : undefined,
   icons: {
     icon: [{ url: "/assets/Aditautocar Chrome Automotive Logo.png", type: "image/png" }],
     shortcut: ["/assets/Aditautocar Chrome Automotive Logo.png"],
@@ -36,6 +39,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "id_ID",
+    url: "/",
     title: "BYD Harmony Cikupa | Dealer Mobil Listrik BYD Tangerang",
     description:
       "Lihat BYD M6, BYD Atto 1, dan BYD Sealion 7, lalu konsultasikan test drive dan trade in mobil di BYD Harmony Cikupa, Tangerang.",
