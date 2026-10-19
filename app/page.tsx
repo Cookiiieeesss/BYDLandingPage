@@ -25,7 +25,7 @@ const structuredData = {
       contactPoint: { "@type": "ContactPoint", telephone: "+62881011026986", contactType: "sales", availableLanguage: "id" },
       image: `${siteUrl}/assets/header.png`,
       logo: `${siteUrl}/assets/Aditautocar%20Chrome%20Automotive%20Logo.png`,
-      priceRange: "Hubungi dealer untuk konfirmasi harga OTR",
+
       address: {
         "@type": "PostalAddress",
         streetAddress: "Jl. Raya Serang No.Km. 17, Talaga",

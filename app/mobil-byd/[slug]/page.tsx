@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { vehicleSeo } from "../../../lib/vehicle-seo";
+import { approvedVehiclePrices, formatIdr } from "../../../lib/approved-prices";
 
 const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL ?? "https://aditautocar.site").replace(/\/$/, "");
 const phone = "62881011026986";
@@ -33,11 +34,20 @@ export default async function VehiclePage({ params }: Props) {
   const message = encodeURIComponent("Halo Adit, saya tertarik " + vehicle.name + ". Mohon info harga OTR, promo, varian dan test drive bila tersedia.");
   const wa = "https://wa.me/" + phone + "?text=" + message;
   // No Product offers until dealer OTR prices and their regional applicability are verified.
+  const prices = approvedVehiclePrices[slug];
   const structuredData = {
     "@context": "https://schema.org", "@type": "Car",
     name: vehicle.name, description: vehicle.intro, model: vehicle.name,
     brand: { "@type": "Brand", name: "BYD" }, url,
     image: vehicle.image ? siteUrl + vehicle.image : undefined,
+    ...(prices ? { offers: prices.map((variant) => ({
+      "@type": "Offer",
+      name: `${vehicle.name} ${variant.name}`,
+      price: variant.price,
+      priceCurrency: "IDR",
+      url,
+      seller: { "@type": "AutoDealer", "@id": `${siteUrl}/#dealer` },
+    })) } : {}),
   };
   return (
     <main className="min-h-screen bg-[#f5f4f0] text-[#11151a]">
@@ -61,6 +71,11 @@ export default async function VehiclePage({ params }: Props) {
             <div className="flex min-h-[290px] flex-col items-center justify-center gap-4 p-8 text-center"><strong className="text-3xl">BYD M6 DM</strong><p className="text-sm">Foto dan varian resmi perlu dikonfirmasi lebih lanjut.</p></div>}
         </div>
       </section>
+      {prices && <section className="mx-auto max-w-6xl px-5 pb-12 sm:px-8">
+        <h2 className="text-2xl font-bold">Referensi harga OTR Jakarta {vehicle.name}</h2>
+        <p className="mt-2 text-sm text-[#515963]">Harga acuan yang disetujui. OTR Tangerang, stok, dan promo harus dikonfirmasi kepada Adit sebelum pemesanan.</p>
+        <ul className="mt-5 grid gap-3 sm:grid-cols-3">{prices.map((variant) => <li key={variant.name} className="rounded-xl border border-black/10 bg-white p-4"><strong className="block">{variant.name}</strong><span className="mt-2 block">{formatIdr(variant.price)}</span></li>)}</ul>
+      </section>}
       <section className="bg-white px-5 py-14 sm:px-8">
         <div className="mx-auto max-w-6xl">
           <h2 className="text-3xl font-bold">Informasi penting {vehicle.name}</h2>
