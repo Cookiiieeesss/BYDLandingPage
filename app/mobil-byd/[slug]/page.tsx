@@ -32,6 +32,7 @@ export default async function VehiclePage({ params }: Props) {
   const url = siteUrl + "/mobil-byd/" + vehicle.slug;
   const message = encodeURIComponent("Halo Adit, saya tertarik " + vehicle.name + ". Mohon info harga OTR, promo, varian dan test drive bila tersedia.");
   const wa = "https://wa.me/" + phone + "?text=" + message;
+  // No Product offers until dealer OTR prices and their regional applicability are verified.
   const structuredData = {
     "@context": "https://schema.org", "@type": "Car",
     name: vehicle.name, description: vehicle.intro, model: vehicle.name,

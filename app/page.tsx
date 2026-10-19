@@ -25,7 +25,7 @@ const structuredData = {
       contactPoint: { "@type": "ContactPoint", telephone: "+62881011026986", contactType: "sales", availableLanguage: "id" },
       image: `${siteUrl}/assets/header.png`,
       logo: `${siteUrl}/assets/Aditautocar%20Chrome%20Automotive%20Logo.png`,
-      priceRange: "Rp 199.000.000 - Rp 719.000.000",
+      priceRange: "Hubungi dealer untuk konfirmasi harga OTR",
       address: {
         "@type": "PostalAddress",
         streetAddress: "Jl. Raya Serang No.Km. 17, Talaga",
@@ -36,8 +36,7 @@ const structuredData = {
       },
       areaServed: ["Cikupa", "Tangerang", "Banten"],
       brand: { "@type": "Brand", name: "BYD" },
-      // Vehicle pages provide model-specific details; do not declare incomplete
-      // Product/Offer objects without verified pricing or genuine reviews.
+      // Product offers are published only after current dealer OTR prices are verified.
     },
   ],
 };

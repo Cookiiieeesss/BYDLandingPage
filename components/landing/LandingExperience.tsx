@@ -10,8 +10,8 @@ import Lenis from "lenis";
 const WA_NUMBER = "62881011026986";
 
 const models = [
-  { name: "BYD M6", type: "MPV listrik keluarga", price: 383000000, variants: [{ name: "Standard 7-Seater", price: 383000000 }, { name: "Superior 7-Seater", price: 423000000 }, { name: "Superior Captain 6-Seater", price: 433000000 }], brochure: "https://drive.google.com/file/d/1xJEeb6ZPQv5EjurjPLbR9rWY1oB4WSD9/view", download: false, tags: ["6–7 penumpang", "V2L", "Kabin fleksibel"] },
-  { name: "BYD Atto 1", type: "City car listrik", price: 199000000, priceLabel: "Mulai dari", variants: [{ name: "Standard Standard Range", price: 199000000 }, { name: "Dynamic Standard Range", price: 205000000 }, { name: "Premium Long Range", price: 245000000 }], brochure: "https://drive.google.com/file/d/1UDrRgmqml1dF16OYdTQB3wEN4xhuSCvO/view", download: false, tags: ["Ringkas di kota", "Blade Battery", "Teknologi modern"] },
+  { name: "BYD M6", type: "MPV listrik keluarga", price: 395000000, variants: [{ name: "Standard 7-Seater", price: 395000000 }, { name: "Superior 7-Seater", price: 435000000 }, { name: "Superior Captain 6-Seater", price: 445000000 }], brochure: "https://drive.google.com/file/d/1xJEeb6ZPQv5EjurjPLbR9rWY1oB4WSD9/view", download: false, tags: ["6–7 penumpang", "V2L", "Kabin fleksibel"] },
+  { name: "BYD Atto 1", type: "City car listrik", price: 199000000, priceLabel: "Mulai dari", variants: [{ name: "Standard Standard Range", price: 199000000 }, { name: "Dynamic Standard Range", price: 210000000 }, { name: "Premium Long Range", price: 245000000 }], brochure: "https://drive.google.com/file/d/1UDrRgmqml1dF16OYdTQB3wEN4xhuSCvO/view", download: false, tags: ["Ringkas di kota", "Blade Battery", "Teknologi modern"] },
   { name: "BYD Sealion 7", type: "SUV listrik premium", price: 629000000, variants: [{ name: "Premium (RWD)", price: 629000000 }, { name: "Performance (AWD)", price: 719000000 }], brochure: "/assets/BROCHURE_SEALION7.pdf", download: true, tags: ["SUV premium", "Jarak tempuh jauh", "Performa AWD"] },
 ];
 
