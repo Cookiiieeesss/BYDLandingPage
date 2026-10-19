@@ -21,10 +21,11 @@ const structuredData = {
       name: "BYD Harmony Cikupa",
       description:
         "Dealer mobil listrik BYD di Cikupa, Tangerang yang menyediakan informasi kendaraan, brosur, dan booking test drive BYD.",
-      telephone: "+6285156688232",
+      telephone: "+62881011026986",
+      contactPoint: { "@type": "ContactPoint", telephone: "+62881011026986", contactType: "sales", availableLanguage: "id" },
       image: `${siteUrl}/assets/header.png`,
       logo: `${siteUrl}/assets/Aditautocar%20Chrome%20Automotive%20Logo.png`,
-      priceRange: "Rp 199.000.000 - Rp 719.000.000",
+
       address: {
         "@type": "PostalAddress",
         streetAddress: "Jl. Raya Serang No.Km. 17, Talaga",
@@ -35,11 +36,7 @@ const structuredData = {
       },
       areaServed: ["Cikupa", "Tangerang", "Banten"],
       brand: { "@type": "Brand", name: "BYD" },
-      makesOffer: [
-        { "@type": "Offer", itemOffered: { "@type": "Product", name: "BYD M6" } },
-        { "@type": "Offer", itemOffered: { "@type": "Product", name: "BYD Atto 1" } },
-        { "@type": "Offer", itemOffered: { "@type": "Product", name: "BYD Sealion 7" } },
-      ],
+      // Product offers are published only after current dealer OTR prices are verified.
     },
   ],
 };
