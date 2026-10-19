@@ -36,11 +36,8 @@ const structuredData = {
       },
       areaServed: ["Cikupa", "Tangerang", "Banten"],
       brand: { "@type": "Brand", name: "BYD" },
-      makesOffer: [
-        { "@type": "Offer", itemOffered: { "@type": "Product", name: "BYD M6" } },
-        { "@type": "Offer", itemOffered: { "@type": "Product", name: "BYD Atto 1" } },
-        { "@type": "Offer", itemOffered: { "@type": "Product", name: "BYD Sealion 7" } },
-      ],
+      // Vehicle pages provide model-specific details; do not declare incomplete
+      // Product/Offer objects without verified pricing or genuine reviews.
     },
   ],
 };
