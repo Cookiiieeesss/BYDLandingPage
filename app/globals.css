@@ -20,16 +20,14 @@ body {
   font-family: "Poppins", system-ui, sans-serif;
 }
 
-a { color: inherit; text-decoration: none; }
+@layer base {
+  a { color: inherit; text-decoration: none; }
+}
 button, input, select { font: inherit; }
 h1, h2, h3, p, span, a, button, dt, dd { overflow-wrap: anywhere; }
 h1, h2, h3 { text-wrap: balance; }
 ::selection { background: #efd27b; color: #111; }
 
-nav a:hover,
-nav a:focus-visible {
-  color: #fff !important;
-}
 
 footer a[href="https://www.ruangpusat.com"] {
   color: #e8b94d !important;

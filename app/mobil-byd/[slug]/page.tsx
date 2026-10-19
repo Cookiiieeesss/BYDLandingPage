@@ -52,7 +52,7 @@ export default async function VehiclePage({ params }: Props) {
           <p className="mb-4 text-xs font-semibold uppercase tracking-widest text-[#9e7622]">{vehicle.category} · Cikupa Tangerang</p>
           <h1 className="text-5xl font-bold tracking-tight">{vehicle.name} Tangerang</h1>
           <p className="mt-6 leading-8 text-[#515963]">{vehicle.intro}</p>
-          <a href={wa} target="_blank" rel="noopener noreferrer" className="mt-8 inline-flex rounded-full bg-[#11151a] px-6 py-4 text-sm font-semibold text-white">Konsultasi WhatsApp Adit ↗</a>
+          <a href={wa} target="_blank" rel="noopener noreferrer" className="mt-8 inline-flex min-h-12 items-center justify-center rounded-full bg-[#11151a] px-6 py-4 text-center text-sm font-semibold !text-white transition-colors hover:bg-[#273443] hover:!text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#b68e34]">Konsultasi WhatsApp Adit ↗</a>
           <p className="mt-3 text-xs text-[#626a72]">Adit · 0881011026986 · Konfirmasi harga, promo dan ketersediaan sebelum membeli.</p>
         </div>
         <div className="relative min-h-[290px] rounded-3xl bg-[#e7e4de] sm:min-h-[380px]">
@@ -69,7 +69,7 @@ export default async function VehiclePage({ params }: Props) {
       <section className="mx-auto max-w-4xl px-5 py-16 sm:px-8">
         <h2 className="text-3xl font-bold">Pertanyaan umum tentang {vehicle.name}</h2>
         <div className="mt-8 space-y-4">{vehicle.faqs.map((faq) => <article key={faq.question} className="rounded-2xl border border-black/10 bg-white p-6"><h3 className="font-semibold">{faq.question}</h3><p className="mt-3 text-sm leading-7 text-[#515963]">{faq.answer}</p></article>)}</div>
-        <div className="mt-10 flex flex-wrap gap-4"><a href={wa} target="_blank" rel="noopener noreferrer" className="rounded-full bg-[#11151a] px-6 py-3 text-sm font-semibold text-white">Chat Adit · 0881011026986</a><Link href="/#test-drive" className="py-3 text-sm font-semibold underline">Formulir test drive</Link></div>
+        <div className="mt-10 flex flex-wrap gap-4"><a href={wa} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-12 items-center justify-center rounded-full bg-[#11151a] px-6 py-3 text-center text-sm font-semibold !text-white transition-colors hover:bg-[#273443] hover:!text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#b68e34]">Chat Adit · 0881011026986</a><Link href="/#test-drive" className="py-3 text-sm font-semibold underline">Formulir test drive</Link></div>
       </section>
     </main>
   );
