@@ -190,7 +190,7 @@ export default function LandingExperience() {
         </div>
       </nav>
 
-      <section id="home" className="hero noise relative isolate flex min-h-[720px] items-end overflow-hidden bg-[#e9e7e0] pt-28 sm:min-h-[850px] lg:min-h-screen">
+      <section id="home" className="hero noise relative isolate flex min-h-[720px] flex-col overflow-hidden bg-[#e9e7e0] pt-28 sm:min-h-[850px] lg:min-h-screen lg:flex-row lg:items-end">
         <Image src="/assets/header.png" alt="BYD M6 di tepi laut" fill priority sizes="100vw" className="hero-backdrop absolute inset-0 -z-20 h-full w-full object-cover object-center opacity-95" />
         <div className="absolute inset-0 -z-10 bg-[linear-gradient(90deg,rgba(245,244,240,.97)_0%,rgba(245,244,240,.9)_28%,rgba(245,244,240,.22)_68%,rgba(245,244,240,.05)_100%)]" />
         <div className="hero-grid pointer-events-none absolute inset-0 -z-10" aria-hidden="true" />
@@ -204,7 +204,7 @@ export default function LandingExperience() {
             <span className="hero-depth-label">ELECTRIC<br />MOTION</span>
           </div>
         </div>
-        <div className="relative z-10 mx-auto grid w-full max-w-[1440px] items-center gap-8 px-5 pb-14 sm:px-8 lg:grid-cols-1 lg:px-14 lg:pb-20">
+        <div className="relative z-10 mx-auto grid w-full max-w-[1440px] items-center gap-8 px-5 pb-7 sm:px-8 sm:pb-10 lg:grid-cols-1 lg:px-14 lg:pb-20">
           <div className="hero-copy max-w-[680px]">
             <div className="mb-6 inline-flex items-center gap-3 rounded-full border border-black/10 bg-white/55 px-4 py-2 text-[10px] font-semibold uppercase tracking-[.2em] text-[#555c65] backdrop-blur-md"><span className="h-2 w-2 rounded-full bg-[#d8a92f]" /> Dealer Resmi BYD · Cikupa</div>
             <p className="mb-3 text-sm font-semibold uppercase tracking-[.24em] text-[#a2781d]">BYD M6 · Mobil Listrik MPV Keluarga</p>
@@ -213,7 +213,12 @@ export default function LandingExperience() {
             <div className="flex flex-wrap gap-3"><a href="#test-drive" className="whitespace-nowrap rounded-full bg-[#11151a] px-6 py-4 text-sm font-semibold !text-white shadow-xl shadow-black/10 transition hover:-translate-y-1 hover:bg-[#d8a92f] hover:!text-black">Booking test drive <span className="ml-2">↗</span></a><a href="#models" className="whitespace-nowrap rounded-full border border-black/20 bg-white/45 px-6 py-4 text-sm font-semibold text-[#11151a] backdrop-blur transition hover:-translate-y-1 hover:bg-white">Jelajahi model</a></div>
           </div>
         </div>
-        <div className="hero-stats relative z-10 mx-5 mb-5 grid w-[calc(100%-2.5rem)] max-w-[920px] grid-cols-2 overflow-hidden rounded-[1.75rem] border border-white/20 bg-[#0e1217]/90 text-white shadow-[0_24px_70px_rgba(14,18,23,.28)] backdrop-blur-2xl sm:mx-8 sm:mb-8 sm:w-[calc(100%-4rem)] sm:grid-cols-4 lg:mb-10 lg:ml-auto lg:mr-14 lg:w-[min(100%,920px)]"><Stat value="3" label="Model unggulan" /><Stat value="1" label="Konsultasi personal" /><Stat value="8" label="Garansi baterai hingga (tahun)*" /><Stat value="1" label="Kontak WhatsApp Adit" /></div>
+        <div aria-label="Statistik layanan BYD Harmony Cikupa" className="hero-stats relative z-10 mx-auto mb-6 grid w-[calc(100%-2.5rem)] max-w-[920px] grid-cols-2 overflow-hidden rounded-[1.75rem] border border-white/20 bg-[#0e1217]/95 text-white shadow-[0_24px_70px_rgba(14,18,23,.28)] backdrop-blur-2xl sm:mb-8 sm:w-[calc(100%-4rem)] sm:grid-cols-4 lg:mb-10 lg:ml-auto lg:mr-14 lg:w-[min(100%,920px)]">
+          <Stat value="3" label="Model unggulan" mobileLabel="Model unggulan" />
+          <Stat value="1" label="Konsultasi personal" mobileLabel="Konsultasi" />
+          <Stat value="8" label="Garansi baterai hingga (tahun)*" mobileLabel="Garansi baterai*" />
+          <Stat value="1" label="Kontak WhatsApp Adit" mobileLabel="WhatsApp Adit" />
+        </div>
       </section>
 
       <div className="overflow-hidden border-y border-white/10 bg-[#11151a] py-4 text-white"><div className="marquee-track flex w-max animate-[marquee_32s_linear_infinite] items-center gap-8 text-xs font-medium tracking-[.08em] text-white/80">{["TEST DRIVE GRATIS", "GARANSI RESMI BYD", "CICILAN TRANSPARAN", "TANPA BBM", "SERVIS DEALER RESMI", "RAMAH LINGKUNGAN", "TEST DRIVE GRATIS", "GARANSI RESMI BYD"].map((item, index) => <span key={`${item}-${index}`} className="flex items-center gap-8">{item}<b className="text-[#e8b94d]">✦</b></span>)}</div></div>
@@ -234,7 +239,7 @@ export default function LandingExperience() {
   );
 }
 
-function Stat({ value, label }: { value: string; label: string }) {
+function Stat({ value, label, mobileLabel }: { value: string; label: string; mobileLabel?: string }) {
   const target = Number(value.split("/")[0]);
   const [count, setCount] = useState(0);
 
@@ -260,7 +265,13 @@ function Stat({ value, label }: { value: string; label: string }) {
   }, [target]);
 
   const displayValue = value.includes("/") ? `${count}/7` : count.toLocaleString("id-ID");
-  return <div className="hero-stat border-r border-white/10 px-5 py-5 sm:px-8 lg:px-10"><strong className="block text-2xl font-semibold leading-none tracking-[-.05em] sm:text-3xl" aria-label={value}>{displayValue}</strong><span className="mt-3 block text-[10px] leading-[1.45] uppercase tracking-[.12em] text-white/50 sm:text-xs">{label}</span></div>;
+  return (
+    <div className="hero-stat flex min-w-0 flex-col justify-center border-r border-white/10 px-4 py-5 sm:px-8 lg:px-10">
+      <strong className="block text-2xl font-semibold leading-none tracking-[-.05em] tabular-nums text-white sm:text-3xl" aria-label={value}>{displayValue}</strong>
+      <span className="mt-3 block text-[11px] font-medium leading-[1.45] uppercase tracking-[.09em] text-white/70 sm:hidden">{mobileLabel ?? label}</span>
+      <span className="mt-3 hidden text-xs leading-[1.45] uppercase tracking-[.12em] text-white/60 sm:block">{label}</span>
+    </div>
+  );
 }
 
 function Field({ label, name, placeholder, type = "text" }: { label: string; name: string; placeholder: string; type?: string }) {

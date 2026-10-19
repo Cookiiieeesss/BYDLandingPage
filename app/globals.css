@@ -127,11 +127,14 @@ footer a[href="https://www.ruangpusat.com"]:focus-visible {
 .hero-stat:nth-child(2n) { border-right: 0; }
 .hero-stat span {
   max-width: 100%;
-  overflow-wrap: normal;
+  overflow-wrap: anywhere;
   word-break: normal;
-  hyphens: none;
   white-space: normal;
-  text-wrap: balance;
+  text-wrap: pretty;
+}
+@media (max-width: 639px) {
+  .hero-stat { min-height: 112px; }
+  .hero-stat:nth-child(-n+2) { border-bottom: 1px solid rgba(255,255,255,.1); }
 }
 .marquee-track {
   min-width: max-content;
