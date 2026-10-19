@@ -46,7 +46,21 @@ export default async function VehiclePage({ params }: Props) {
       price: variant.price,
       priceCurrency: "IDR",
       url,
-      seller: { "@type": "AutoDealer", "@id": `${siteUrl}/#dealer` },
+      seller: {
+        "@type": "AutoDealer",
+        "@id": `${siteUrl}/#dealer`,
+        name: "BYD Harmony Cikupa",
+        image: `${siteUrl}/assets/header.png`,
+        telephone: "+62881011026986",
+        address: {
+          "@type": "PostalAddress",
+          streetAddress: "Jl. Raya Serang No.Km. 17, Talaga",
+          addressLocality: "Cikupa",
+          addressRegion: "Banten",
+          postalCode: "15710",
+          addressCountry: "ID",
+        },
+      },
     })) } : {}),
   };
   return (
