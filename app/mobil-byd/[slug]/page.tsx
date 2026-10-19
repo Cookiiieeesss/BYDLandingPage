@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 import { notFound } from "next/navigation";
 import { vehicleSeo } from "../../../lib/vehicle-seo";
 
@@ -42,8 +43,8 @@ export default async function VehiclePage({ params }: Props) {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
       <header className="border-b border-black/10 bg-white px-5 py-5 sm:px-8">
         <nav aria-label="Navigasi" className="mx-auto flex max-w-6xl items-center justify-between">
-          <a href="/" className="font-bold">BYD Harmony Cikupa</a>
-          <a href="/#models" className="text-sm underline underline-offset-4">← Semua model</a>
+          <Link href="/" className="font-bold">BYD Harmony Cikupa</Link>
+          <Link href="/#models" className="text-sm underline underline-offset-4">← Semua model</Link>
         </nav>
       </header>
       <section className="mx-auto grid max-w-6xl items-center gap-10 px-5 py-14 sm:px-8 lg:grid-cols-2 lg:py-20">
@@ -68,7 +69,7 @@ export default async function VehiclePage({ params }: Props) {
       <section className="mx-auto max-w-4xl px-5 py-16 sm:px-8">
         <h2 className="text-3xl font-bold">Pertanyaan umum tentang {vehicle.name}</h2>
         <div className="mt-8 space-y-4">{vehicle.faqs.map((faq) => <article key={faq.question} className="rounded-2xl border border-black/10 bg-white p-6"><h3 className="font-semibold">{faq.question}</h3><p className="mt-3 text-sm leading-7 text-[#515963]">{faq.answer}</p></article>)}</div>
-        <div className="mt-10 flex flex-wrap gap-4"><a href={wa} target="_blank" rel="noopener noreferrer" className="rounded-full bg-[#11151a] px-6 py-3 text-sm font-semibold text-white">Chat Adit · 0881011026986</a><a href="/#test-drive" className="py-3 text-sm font-semibold underline">Formulir test drive</a></div>
+        <div className="mt-10 flex flex-wrap gap-4"><a href={wa} target="_blank" rel="noopener noreferrer" className="rounded-full bg-[#11151a] px-6 py-3 text-sm font-semibold text-white">Chat Adit · 0881011026986</a><Link href="/#test-drive" className="py-3 text-sm font-semibold underline">Formulir test drive</Link></div>
       </section>
     </main>
   );
